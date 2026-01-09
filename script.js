@@ -20,20 +20,18 @@ Hello Larry
 Hello Paula
 Hello Laura
 Good Bye Jim
-
 WARNING!!! WARNING!!!
 The code does NOT currently work! It is YOUR job to make it work
 as described in the requirements and the steps in order to complete this
 assignment.
 WARNING!!! WARNING!!!
-
 */
+(function (window) {
+  // STEP 1: (NOTHING TO DO. ALREADY DONE FOR YOU)
+  // Wrap the entire contents of script.js inside of an IIFE
+  // See Lecture 52, part 2
+  // (Note, Step 2 will be done in the SpeakHello.js file.)
 
-// STEP 1: (NOTHING TO DO. ALREADY DONE FOR YOU)
-// Wrap the entire contents of script.js inside of an IIFE
-// See Lecture 52, part 2
-// (Note, Step 2 will be done in the SpeakHello.js file.)
-(function () {
   var names = [
     "Yaakov",
     "John",
@@ -49,7 +47,8 @@ WARNING!!! WARNING!!!
 
   // STEP 10: (NOTHING TO DO. ALREADY DONE FOR YOU)
   // Loop over the names array and say either 'Hello' or "Good Bye"
-  // using either the helloSpeaker's or byeSpeaker's 'speak' method.
+  // using the 'speak' method or either helloSpeaker's or byeSpeaker's
+  // 'speak' method.
   // See Lecture 50, part 1
   for (var i = 0; i < names.length; i++) {
     // STEP 11: (NOTHING TO DO. ALREADY DONE FOR YOU)
@@ -67,9 +66,9 @@ WARNING!!! WARNING!!!
     // in the loop. Otherwise, call helloSpeaker's 'speak' method with the current
     // name in the loop.
     if (firstLetter === "j") {
-      byeSpeaker.speak(names[i]);
+      window.byeSpeaker.speak(names[i]);
     } else {
-      helloSpeaker.speak(names[i]);
+      window.helloSpeaker.speak(names[i]);
     }
   }
-})();
+})(window);
